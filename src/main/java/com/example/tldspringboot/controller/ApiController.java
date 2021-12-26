@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api") // RequestMapping URL을 지정해주는 Annotation
 public class ApiController {
 
-    @GetMapping("/hello") // http://localhost:9090/api/hello
+    @GetMapping("/hello") // http://localhost:8080/api/hello
     public String hello() {
         return "hello spring boot!";
     }

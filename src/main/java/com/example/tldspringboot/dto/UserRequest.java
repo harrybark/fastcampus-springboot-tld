@@ -1,10 +1,17 @@
 package com.example.tldspringboot.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonInclude(JsonInclude.Include.NON_NULL) // null 값은 포함하지 않음.
 public class UserRequest {
 
     private String name;
     private String mail;
     private int age;
+
+    @JsonProperty("phone_number")
+    private String phoneNumber;
 
     public String getName() {
         return name;
@@ -30,8 +37,21 @@ public class UserRequest {
         this.age = age;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     @Override
     public String toString() {
-        return "name : " + this.getName() + ", email : " + this.getMail() + " , age : " + this.getAge() ;
+        return "UserRequest{" +
+                "name='" + name + '\'' +
+                ", mail='" + mail + '\'' +
+                ", age=" + age +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
     }
 }
