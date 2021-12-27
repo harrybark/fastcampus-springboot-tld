@@ -1,0 +1,16 @@
+{
+  "name":"홍길동",
+  "age":10,
+  "carList":[
+    {
+      "car_name":"A6",
+      "car_number":"11가 1111",
+      "TYPE":"SEDAN"
+    },
+    {
+      "car_name":"X6",
+      "car_number":"11나 1111",
+      "TYPE":"SUV"
+    }
+  ]
+}
