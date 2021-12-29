@@ -1,16 +1,26 @@
 package com.example.tldspringboot.controller;
 
 import com.example.tldspringboot.dto.ExceptionUser;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @RestController
 @RequestMapping("exception-api")
+@Validated
 public class ExceptionController {
 
     @GetMapping("")
-    public ExceptionUser get(@RequestParam(required = false) String name, @RequestParam(required = false) Integer age){
+    public ExceptionUser get(
+            @Size(min = 2)
+            @RequestParam String name,
+            @NotNull
+            @Min(value = 1)
+            @RequestParam Integer age){
         ExceptionUser user = new ExceptionUser();
         user.setName(name);
         user.setAge(age);
@@ -24,4 +34,5 @@ public class ExceptionController {
 
         return user;
     }
+
 }

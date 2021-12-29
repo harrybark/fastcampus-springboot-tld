@@ -4,9 +4,9 @@ import com.example.tldspringboot.ioc.ApplicationContextProvider;
 import com.example.tldspringboot.ioc.Base64Encoder;
 import com.example.tldspringboot.ioc.Encoder;
 import com.example.tldspringboot.ioc.UrlEncoder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Base64;
 
 @SpringBootApplication
+@ServletComponentScan(basePackages = {"com.example.tldspringboot"})
 public class TldSpringBootApplication {
 
 	public static void main(String[] args) {
