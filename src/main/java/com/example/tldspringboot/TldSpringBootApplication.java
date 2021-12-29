@@ -10,11 +10,13 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import java.util.Base64;
 
 @SpringBootApplication
 @ServletComponentScan(basePackages = {"com.example.tldspringboot"})
+@EnableAsync
 public class TldSpringBootApplication {
 
 	public static void main(String[] args) {
